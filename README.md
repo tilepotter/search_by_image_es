@@ -25,7 +25,7 @@
 - 修改ES地址（集群用“,”隔开，我这里使用8.0.0版本）
 - 修改对象存储地址，我这里使用开源对象存储MinIO，简单易配
 
-### ![image-20231011162240788](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20231011162240788.png)
+### ![image-20231011162240788](https://github.com/tilepotter/search_by_image_es/blob/main/md_img/image-20231011162240788.png?raw=true)
 
 
 
@@ -71,11 +71,11 @@ curl  -XPUT 'http://localhost:9200/search_by_image_index' -H 'Content-Type: appl
 
 #### 3.3.2 Postman 调用接口如下：
 
-![image-20231011163544460](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20231011163544460.png)
+![image-20231011163544460](https://github.com/tilepotter/search_by_image_es/blob/main/md_img/image-20231011163544460.png?raw=true)
 
 #### 3.3.3后端接口日志：
 
-![image-20231011163448074](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20231011163448074.png)
+![image-20231011163448074](https://github.com/tilepotter/search_by_image_es/blob/main/md_img/image-20231011163448074.png?raw=true)
 
 
 
@@ -111,14 +111,14 @@ curl  -XPUT 'http://localhost:9200/search_by_image_index' -H 'Content-Type: appl
 
 使用如下`2007_001457.jpg`这张图片进行检索召回测试：
 
-![2007_001457](D:\Download\Train_Images_Set\set01_500\2007_001457.jpg)
+![2007_001457](https://github.com/tilepotter/search_by_image_es/blob/main/md_img/2007_001457.jpg?raw=true)
 
 Postman 调用接口如下：
 
-![image-20231011164509769](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20231011164509769.png)
+![image-20231011164509769](https://github.com/tilepotter/search_by_image_es/blob/main/md_img/image-20231011164509769.png?raw=true)
 
 其中score是余弦相似度计算之后的分值，imageName为图片名称，imageUrl为对象存储返回的图片访问临时URL。复制该URL到浏览器访问如下：
 
-![image-20231011164819943](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20231011164819943.png)
+![image-20231011164819943](https://github.com/tilepotter/search_by_image_es/blob/main/md_img/image-20231011164819943.png?raw=true)
 
 可以看到同样的图片召回率是100%，后续可使用向量数据库`Milvus`试试效果如何。
