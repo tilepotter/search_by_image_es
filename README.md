@@ -7,9 +7,9 @@
 * 检索召回：使用`cosineSimilarity` 余弦相似度函数计算向量之间的相似度得分
 * 图片存储：`OSS`对象存储
 
-## 2、为什么会写这个demo？
+## 2、demo介绍
 
-本人之前对以图搜图学习了许久，研究学习了一些以图搜图工程化落地的实现方法，总想着动手试一试，难点在于非结构化数据的特征向量提取、存储和检索召回。这个demo比较简单的使用了预训练模型`VGG19`直接提取图片的特征向量，使用`Flask`封装`VGG`算法，可通过`RESTful HTTP`接口直接调用。项目`VGG`模型方面中直接使用了这位大佬的成品代码，大佬的博客地址及`GitHub`地址：https://www.eula.club/，https://github.com/Logistic98/yoyo-algorithm/tree/master/image-feature-vector
+这个demo比较简单的使用了预训练模型`VGG19`直接提取图片的特征向量，使用`Flask`封装`VGG`算法，可通过`RESTful HTTP`接口直接调用。项目`VGG`模型方面中直接使用了这位大佬的成品代码，大佬的博客地址及`GitHub`地址：https://www.eula.club/，https://github.com/Logistic98/yoyo-algorithm/tree/master/image-feature-vector
 
 存储和检索方面使用的 ES-8.0 。ES 从7.2版本引入了向量类型dense_vector，开始支持向量类型的存储及检索，但针对海量图片的向量存储，以及后续检索召回，性能及速度没有做过测试。按道理Script做的是暴力检索，随着向量维度的增加和数据量的上升，检索效率及召回率肯定下降，工程上的一些建议是增加query的参数，限制匹配的文档数量，比如时间范围、检索类型等。
 
